@@ -3,12 +3,13 @@
 FoodApp is a webpage where you can order foods from different restaurants.
 
 app component
+
 -header
 
 - logo
 - navigation bar
 
-- body
+-body
 
 - search
 - restaurant container
