@@ -9,9 +9,9 @@ const RestaurantCard = (props) => {
     avgRating,
     cuisines,
     areaName,
-    slaString,
+    sla,
     costForTwo,
-  } = resData?.card; // Updated to access card directly
+  } = resData?.info; // Updated to access card directly
   return (
     <div className="card">
       <img
@@ -24,7 +24,7 @@ const RestaurantCard = (props) => {
         <b>⭐{avgRating}</b>
       </span>
       <span style={{ marginRight: 2.5 + "em" }}></span>
-      <span>{slaString}</span>
+      <span>{sla.slaString}</span>
       <h4 className="cuisine-text">{cuisines.join(", ")}</h4>
       <h4>{areaName}</h4>
       <span>{costForTwo}</span>
