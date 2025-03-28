@@ -4,6 +4,9 @@
   border: 1px solid black;
   padding: 0 15px;
 }
+a {
+  text-decoration: none;
+}
 h2 {
   font-size: 1.3em;
 }
@@ -81,4 +84,11 @@ h2 {
 .search-btn {
   padding: 10px;
   margin-left: 10px;
+}
+
+#login-btn {
+  background-color: #4caf50;
+  font-size: medium;
+  padding: 0 20px;
+  cursor: pointer;
 }
