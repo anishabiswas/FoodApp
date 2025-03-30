@@ -1,22 +1,11 @@
-import { useEffect, useState } from "react";
-import { MENU_URL } from "../utils/constant";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
+import useResMenuData from "../utils/useResMenuData";
 
 const RestaurantMenu = () => {
-  const [menuData, setMenuData] = useState(null);
-
   const { id } = useParams();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(MENU_URL + id);
-    const response = await data.json();
-    setMenuData(response.data);
-  };
+  const menuData = useResMenuData(id);
 
   if (menuData === null) return <Shimmer />;
   // if statement is used just before this destructing otherwise it will not wait for data and it will start to destructure then it will throw an error
