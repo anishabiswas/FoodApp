@@ -8,35 +8,39 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="header flex justify-between bg-pink-50 shadow-lg">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="Logo" />
+        <img className="logo w-30 h-30" src={LOGO_URL} alt="Logo" />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li> Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-          <li>
+      <div className="nav-items flex ">
+        <ul className="head-list flex p-4 my-4 ml-4">
+          <li className="p-2 m-2">
+            {" "}
+            Online Status: {onlineStatus ? "✅" : "🔴"}
+          </li>
+          <li className="p-2 m-2">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="p-2 m-2">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="p-2 m-2">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="p-2 m-2">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
-          <button
-            id="login-btn"
-            onClick={() =>
-              initial === "LogIn" ? setInitial("LogOut") : setInitial("LogIn")
-            }
-          >
-            {initial}
-          </button>
+          <li className="p-2 m-2">Cart</li>
         </ul>
+        <button
+          className="px-2 mx-2 my-8 bg-orange-100"
+          id="login-btn"
+          onClick={() =>
+            initial === "LogIn" ? setInitial("LogOut") : setInitial("LogIn")
+          }
+        >
+          {initial}
+        </button>
       </div>
     </div>
   );
