@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { WithDiscountInfo } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
@@ -9,6 +9,7 @@ const Body = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [searchData, setSearchData] = useState("");
 
+  const ResCardDiscountInfo = WithDiscountInfo(RestaurantCard);
   const onlineStatus = useOnlineStatus();
   useEffect(() => {
     fetchData();
@@ -25,14 +26,14 @@ const Body = () => {
     );
 
     setFilteredData(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
   if (onlineStatus === false) {
     return <h1>Seems like you are offline, please try after sometime !!</h1>;
   }
-  console.log(listOfRes);
+
   return listOfRes.length === 0 ? (
     <Shimmer />
   ) : (
@@ -50,7 +51,7 @@ const Body = () => {
             }}
           />
           <button
-            className="search-btn px-2 py-2 m-4 bg-gray-200 rounded-lg"
+            className="search-btn px-2 py-2 m-4 bg-gray-200 rounded-lg font-medium"
             onClick={() => {
               console.log(searchData);
               const filtered = listOfRes.filter((res) =>
@@ -64,7 +65,7 @@ const Body = () => {
         </div>
         <div className="filter-box p-2 m-2 items-center">
           <button
-            className="top-rated-btn  px-2 py-2 m-4 bg-gray-200 rounded-lg"
+            className="top-rated-btn  px-2 py-2 m-4 bg-gray-200 rounded-lg font-medium"
             onClick={() => {
               const topFilteredData = listOfRes.filter(
                 (res) => res.info.avgRating > 4.5
@@ -78,10 +79,14 @@ const Body = () => {
       </div>
       <div className="rest-container flex flex-wrap justify-center m-4">
         {/* restaurant cards */}
-
+        {console.log(filteredData)};
         {filteredData.map((rest) => (
           <Link key={rest.info.id} to={"/restaurants/" + rest.info.id}>
-            <RestaurantCard resData={rest} />
+            {rest.info.aggregatedDiscountInfoV3 ? (
+              <ResCardDiscountInfo resData={rest} />
+            ) : (
+              <RestaurantCard resData={rest} />
+            )}
           </Link>
         ))}
       </div>

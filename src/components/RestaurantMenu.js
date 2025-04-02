@@ -18,9 +18,9 @@ const RestaurantMenu = () => {
     totalRatingsString,
     sla,
   } = menuData?.cards[2]?.card?.card?.info;
-
+  // for this itemcards sometimes cards[1] or [2]
   const { itemCards } =
-    menuData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    menuData?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
 
   return (
