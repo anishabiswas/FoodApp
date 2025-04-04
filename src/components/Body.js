@@ -77,7 +77,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="rest-container flex flex-wrap justify-center m-4">
+      <div className="rest-container flex flex-wrap justify-center h-screen mx-auto w-10/12 items-center">
         {/* restaurant cards */}
         {console.log(filteredData)};
         {filteredData.map((rest) => (
