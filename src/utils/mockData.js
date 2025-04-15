@@ -1,143 +1,87 @@
-const resList = [
+const data = [
   {
-    card: {
-      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      id: "317552",
-      name: "Home Food Co.",
-      cloudinaryImageId:
-        "FOOD_CATALOG/IMAGES/CMS/2025/2/21/efb2ad6f-b925-42cf-a149-18e88354b678_7a86fcd7-7ff5-4c46-ae35-912af4972715.jpeg",
-      locality: "Nadia",
-      areaName: "Kalyani",
-      costForTwo: "₹250 for two",
-      cuisines: ["North Indian", "Bengali", "Chinese", "Biryani"],
-      avgRating: 4,
-      parentId: "96482",
-      avgRatingString: "4.0",
-      totalRatingsString: "1.0K+",
-      deliveryTime: 31,
-      lastMileTravel: 3.7,
-      serviceability: "SERVICEABLE",
-      slaString: "30-35 mins",
-      lastMileTravelString: "3.7 km",
-      iconType: "ICON_TYPE_EMPTY",
-    },
-  },
-  {
-    card: {
-      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      id: "697200",
-      name: "Baba Briyani",
-      cloudinaryImageId: "f764e350478ca4f7c7054eaeeea19fc7",
-      locality: "Lenin sarani",
-      areaName: "Kalyani",
-      costForTwo: "₹143 for two",
-      cuisines: ["Biryani", "North Indian"],
-      avgRating: 3.9,
-      parentId: "416954",
-      avgRatingString: "3.9",
-      totalRatingsString: "34",
-      deliveryTime: 31,
-      lastMileTravel: 1.5,
-      serviceability: "SERVICEABLE",
-      slaString: "30-35 mins",
-      lastMileTravelString: "1.5 km",
-      iconType: "ICON_TYPE_EMPTY",
-    },
-  },
-
-  {
-    card: {
-      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      id: "168720",
-      name: "Shiv Hotel",
-      cloudinaryImageId: "zyhx9f3pzdeviqvayaeu",
-      locality: "Thana Mor",
-      areaName: "Kanchrapara Loco",
-      costForTwo: "₹200 for two",
-      cuisines: ["Chinese", "North Indian", "Tandoor"],
-      avgRating: 3.7,
-      parentId: "183234",
-      avgRatingString: "3.7",
-      totalRatingsString: "1.5K+",
-      deliveryTime: 38,
-      lastMileTravel: 1.3,
-      serviceability: "SERVICEABLE",
-      slaString: "35-40 mins",
-      lastMileTravelString: "1.3 km",
-      iconType: "ICON_TYPE_EMPTY",
-    },
-  },
-
-  {
-    card: {
-      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      id: "213772",
-      name: "New Raj Cabin (Jitu)",
-      cloudinaryImageId:
-        "FOOD_CATALOG/IMAGES/CMS/2024/6/25/7063ca7c-d3bb-4d6a-8bbc-72357c0d42ea_dd8dc75a-3561-446b-b545-e315c5d337fb.jpg",
-      locality: "Natun Bazar",
-      areaName: "Naihati",
-      costForTwo: "₹300 for two",
-      cuisines: ["Biryani", "Indian", "South Indian", "Chinese"],
-      avgRating: 3.7,
-      parentId: "147662",
-      avgRatingString: "3.7",
-      totalRatingsString: "5.1K+",
-      promoted: true,
-      deliveryTime: 38,
-      lastMileTravel: 10.7,
-      serviceability: "SERVICEABLE",
-      slaString: "35-40 mins",
-      lastMileTravelString: "10.7 km",
-      iconType: "ICON_TYPE_EMPTY",
-    },
-  },
-  {
-    card: {
-      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      id: "303893",
-      name: "Haji Biryani House",
-      cloudinaryImageId: "dcv3qx56pmeq12a0nage",
-      locality: "Kalyani",
-      areaName: "Kalyani",
-      costForTwo: "₹350 for two",
-      cuisines: ["Biryani", "Mughlai", "Indian"],
-      avgRating: 3.8,
-      parentId: "18592",
-      avgRatingString: "3.8",
-      totalRatingsString: "2.4K+",
-      deliveryTime: 15,
-      lastMileTravel: 1.5,
-      serviceability: "SERVICEABLE",
-      slaString: "15-20 mins",
-      lastMileTravelString: "1.5 km",
-      iconType: "ICON_TYPE_EMPTY",
-    },
-  },
-  {
-    card: {
-      "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      id: "889768",
-      name: "MITRA BIRYANI",
-      cloudinaryImageId:
-        "FOOD_CATALOG/IMAGES/CMS/2024/6/6/ba887291-da22-415b-8230-7487d0c6be83_778cf69a-dce7-4929-9cb1-aa4038524bc8.jpg",
-      locality: "Kanchrapara,",
-      areaName: "Halisahar",
-      costForTwo: "₹600 for two",
-      cuisines: ["Biryani", "Desserts", "Kebabs", "Snacks"],
-      avgRating: 3.6,
-      parentId: "520126",
-      avgRatingString: "3.6",
-      totalRatingsString: "54",
-      promoted: true,
-      deliveryTime: 23,
-      lastMileTravel: 2.4,
-      serviceability: "SERVICEABLE",
-      slaString: "20-25 mins",
-      lastMileTravelString: "2.4 km",
-      iconType: "ICON_TYPE_EMPTY",
+    resData: {
+      info: {
+        id: "10365",
+        name: "Pizza Hut",
+        cloudinaryImageId:
+          "RX_THUMBNAIL/IMAGES/VENDOR/2025/4/9/e9e0022b-4d44-4bd5-a0a5-6ae98e9745d6_10365.jpg",
+        locality: "CC1 (57)",
+        areaName: "Bidhannagar",
+        costForTwo: "₹350 for two",
+        cuisines: ["Pizzas"],
+        avgRating: 4.2,
+        parentId: "721",
+        avgRatingString: "4.2",
+        totalRatingsString: "10K+",
+        sla: {
+          deliveryTime: 36,
+          lastMileTravel: 1.6,
+          serviceability: "SERVICEABLE",
+          slaString: "35-40 mins",
+          lastMileTravelString: "1.6 km",
+          iconType: "ICON_TYPE_EMPTY",
+        },
+        availability: {
+          nextCloseTime: "2025-04-15 23:00:00",
+          opened: true,
+        },
+        badges: {
+          imageBadges: [
+            {
+              imageId: "Rxawards/_CATEGORY-Pizza.png",
+              description: "Delivery!",
+            },
+          ],
+        },
+        isOpen: true,
+        type: "F",
+        badgesV2: {
+          entityBadges: {
+            imageBased: {
+              badgeObject: [
+                {
+                  attributes: {
+                    description: "Delivery!",
+                    imageId: "Rxawards/_CATEGORY-Pizza.png",
+                  },
+                },
+              ],
+            },
+            textBased: {},
+            textExtendedBadges: {},
+          },
+        },
+        aggregatedDiscountInfoV3: {
+          header: "50% OFF",
+          subHeader: "UPTO ₹100",
+        },
+        differentiatedUi: {
+          displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+          differentiatedUiMediaDetails: {
+            lottie: {},
+            video: {},
+          },
+        },
+        reviewsSummary: {},
+        displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        restaurantOfferPresentationInfo: {},
+        externalRatings: {
+          aggregatedRating: {
+            rating: "--",
+          },
+        },
+        ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+      },
+      analytics: {
+        context: "seo-data-92bb94d2-2daa-4caa-b653-4a1263e3308e",
+      },
+      cta: {
+        link: "https://www.swiggy.com/city/kolkata/pizza-hut-cc1-57-bidhannagar-rest10365",
+        type: "WEBLINK",
+      },
     },
   },
 ];
 
-export default resList;
+export default data;

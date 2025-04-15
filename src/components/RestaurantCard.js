@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+  // console.log(props);
   const {
     name,
     cloudinaryImageId,
