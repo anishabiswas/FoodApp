@@ -77,19 +77,27 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="rest-container flex flex-wrap justify-center h-screen mx-auto w-10/12 items-center">
-        {/* restaurant cards */}
-        {console.log(filteredData)};
-        {filteredData.map((rest) => (
-          <Link key={rest.info.id} to={"/restaurants/" + rest.info.id}>
-            {rest.info.aggregatedDiscountInfoV3 ? (
-              <ResCardDiscountInfo resData={rest} />
-            ) : (
-              <RestaurantCard resData={rest} />
-            )}
-          </Link>
-        ))}
-      </div>
+      {/* restaurant cards */}
+      {filteredData.length === 0 ? (
+        <div className="text-center mt-25 ">
+          <p className="text-xl text-gray-500">No items found 🙁</p>
+          <p className="text-sm text-gray-400">
+            Try searching with a different keyword.
+          </p>
+        </div>
+      ) : (
+        <div className="rest-container flex flex-wrap justify-center h-screen mx-auto w-10/12 items-center">
+          {filteredData.map((rest) => (
+            <Link key={rest.info.id} to={"/restaurants/" + rest.info.id}>
+              {rest.info.aggregatedDiscountInfoV3 ? (
+                <ResCardDiscountInfo resData={rest} />
+              ) : (
+                <RestaurantCard resData={rest} />
+              )}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
