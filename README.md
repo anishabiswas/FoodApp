@@ -41,3 +41,22 @@ C:\Users\MURUGAN.V\Desktop\React-Webapp\node_modules\react-router-dom\dist\index
     import { createBrowserRouter, RouterProvider, Outlet } from "react-router"
 
 github repo- https://github.com/remix-run/react-router/issues/13097
+
+used <Link/> component in header, I used < BrowserRouter/> in its test case.
+
+I imported both components from react-router-dom but still it's giving error for the <Link/> component.
+
+There is a package that fixes this issue:
+• npm install jest-fixed-jsdom --save-dev
+•Then in ur jest.config.js file, add this config below likely replacing jsdom
+
+module. exports ={
+testEnvironment : 'jest-fixed-jsdom',
+}
+
+npm install jest-fixed-jsdom --save-dev
+Then in ur jest. config.js file
+Add this :
+module. exports={
+testEnvironment :'jest-fixed-jsdom',
+}

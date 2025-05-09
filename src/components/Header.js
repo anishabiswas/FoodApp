@@ -38,7 +38,9 @@ const Header = () => {
           <li className="font-bold p-2 m-2 text-xl">
             <Link to="/cart">🛒 ({cartItems.length})</Link>
           </li>
-          <li className="font-bold p-2 m-2">{loggedInUser}</li>
+          {initial === "LogIn" && (
+            <li className="font-bold p-2 m-2">{loggedInUser}</li>
+          )}
         </ul>
         <button
           className=" font-bold px-2 mx-2 my-8 bg-orange-300 hover:bg-amber-600"
