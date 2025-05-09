@@ -12,7 +12,7 @@ const Cart = () => {
   };
   return (
     <div className="cart text-center m-4 p-4">
-      <h2 className="text-2xl font-bold my-2 ">Order Details</h2>
+      <h2 className="text-2xl font-bold my-2 text-gray-600">Order Details</h2>
       <button
         className="m-2 p-2 mb-10 bg-black text-amber-50 rounded-xl"
         onClick={handleclearItems}
@@ -33,6 +33,9 @@ const Cart = () => {
       <div className="w-6/12 m-auto">
         <ItemList items={cartItems} />
       </div>
+      <p className="mt-6 text-md text-orange-500 font-medium">
+        Cart Payment Section is under maintenance.
+      </p>
     </div>
   );
 };
