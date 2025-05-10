@@ -6,7 +6,7 @@ import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [initial, setInitial] = useState("LogIn");
+  const [initial, setInitial] = useState("LogOut");
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
@@ -18,7 +18,7 @@ const Header = () => {
         <img className="logo w-30 h-30" src={LOGO_URL} alt="Logo" />
       </div>
       <div className="nav-items flex ">
-        <ul className="head-list flex p-4 my-4 ml-4">
+        <ul className="head-list flex p-4 my-3 ml-4">
           <li className=" font-bold p-2 m-2">
             {" "}
             Online Status: {onlineStatus ? "✅" : "🔴"}
@@ -38,12 +38,12 @@ const Header = () => {
           <li className="font-bold p-2 m-2 text-xl">
             <Link to="/cart">🛒 ({cartItems.length})</Link>
           </li>
-          {initial === "LogIn" && (
+          {initial === "LogOut" && (
             <li className="font-bold p-2 m-2">{loggedInUser}</li>
           )}
         </ul>
         <button
-          className=" font-bold px-2 mx-2 my-8 bg-orange-300 hover:bg-amber-600"
+          className=" font-bold px-2 mx-2 my-11 bg-orange-300 hover:bg-amber-600"
           id="login-btn"
           onClick={() =>
             initial === "LogIn" ? setInitial("LogOut") : setInitial("LogIn")

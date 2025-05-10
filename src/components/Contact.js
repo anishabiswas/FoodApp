@@ -8,7 +8,7 @@ const Contact = () => {
         <p className="mt-2 text-lg text-gray-700">
           Email:{" "}
           <span className="text-pink-400 font-semibold  hover:text-blue-600">
-            support@foodapp.in
+            support@fooddelicacy.in
           </span>
         </p>
       </div>
