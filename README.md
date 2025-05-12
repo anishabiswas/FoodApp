@@ -1,6 +1,6 @@
 # FoodApp
 
-FoodApp is a webpage where you can order foods from different restaurants.
+FoodApp is a web application where you can order foods from different restaurants.
 
 app component
 
@@ -18,9 +18,9 @@ app component
 -footer
 
 - copyright
-- address
-- contact
-- links
+- social links
+- download links
+
 
 Facing issue--
 
@@ -42,9 +42,9 @@ C:\Users\MURUGAN.V\Desktop\React-Webapp\node_modules\react-router-dom\dist\index
 
 github repo- https://github.com/remix-run/react-router/issues/13097
 
-used <Link/> component in header, I used < BrowserRouter/> in its test case.
+used <Link/> component in header and < BrowserRouter/> in its test case.
 
-I imported both components from react-router-dom but still it's giving error for the <Link/> component.
+imported both components from react-router-dom but still it's giving error for the <Link/> component.
 
 There is a package that fixes this issue:
 • npm install jest-fixed-jsdom --save-dev
@@ -53,10 +53,4 @@ There is a package that fixes this issue:
 module. exports ={
 testEnvironment : 'jest-fixed-jsdom',
 }
-
-npm install jest-fixed-jsdom --save-dev
-Then in ur jest. config.js file
-Add this :
-module. exports={
-testEnvironment :'jest-fixed-jsdom',
-}
+     
