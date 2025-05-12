@@ -66,6 +66,7 @@ const Body = () => {
                   res.info.name.toLowerCase().includes(searchData.toLowerCase())
                 );
                 setFilteredData(filtered);
+                setSearchData("");
               }}
             >
               Search
